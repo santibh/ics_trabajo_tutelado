@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import Post from "./Post";
 
-const Feed = ({posts}) => {
+const Feed = ({posts, setPosts}) => {
+
+  const deletePost = id => {
+    setPosts(prev => prev.filter(x => x.id !== id))
+  }
 
   return (
-    <div>
-      Feed: aquí se veran los mensajes
+    <div className="col">
       {posts.map((x) => (
-        <Post id={x.id} owner={x.owner} title={x.title} />
+        <Post id={x.id} owner={x.owner} title={x.title} deletePost={deletePost} />
       ))}
     </div>
   );
