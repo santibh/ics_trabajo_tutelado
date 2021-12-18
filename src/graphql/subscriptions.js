@@ -1,80 +1,11 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateBlog = /* GraphQL */ `
-  subscription OnCreateBlog {
-    onCreateBlog {
-      id
-      name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateBlog = /* GraphQL */ `
-  subscription OnUpdateBlog {
-    onUpdateBlog {
-      id
-      name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteBlog = /* GraphQL */ `
-  subscription OnDeleteBlog {
-    onDeleteBlog {
-      id
-      name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const onCreatePost = /* GraphQL */ `
-  subscription OnCreatePost {
-    onCreatePost {
+  subscription OnCreatePost($owner: String) {
+    onCreatePost(owner: $owner) {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
@@ -82,29 +13,21 @@ export const onCreatePost = /* GraphQL */ `
           createdAt
           updatedAt
           postCommentsId
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
+      owner
     }
   }
 `;
 export const onUpdatePost = /* GraphQL */ `
-  subscription OnUpdatePost {
-    onUpdatePost {
+  subscription OnUpdatePost($owner: String) {
+    onUpdatePost(owner: $owner) {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
@@ -112,29 +35,21 @@ export const onUpdatePost = /* GraphQL */ `
           createdAt
           updatedAt
           postCommentsId
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
+      owner
     }
   }
 `;
 export const onDeletePost = /* GraphQL */ `
-  subscription OnDeletePost {
-    onDeletePost {
+  subscription OnDeletePost($owner: String) {
+    onDeletePost(owner: $owner) {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
@@ -142,93 +57,79 @@ export const onDeletePost = /* GraphQL */ `
           createdAt
           updatedAt
           postCommentsId
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
+      owner
     }
   }
 `;
 export const onCreateComment = /* GraphQL */ `
-  subscription OnCreateComment {
-    onCreateComment {
+  subscription OnCreateComment($owner: String) {
+    onCreateComment(owner: $owner) {
       id
       post {
         id
         title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
+        owner
       }
       content
       createdAt
       updatedAt
       postCommentsId
+      owner
     }
   }
 `;
 export const onUpdateComment = /* GraphQL */ `
-  subscription OnUpdateComment {
-    onUpdateComment {
+  subscription OnUpdateComment($owner: String) {
+    onUpdateComment(owner: $owner) {
       id
       post {
         id
         title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
+        owner
       }
       content
       createdAt
       updatedAt
       postCommentsId
+      owner
     }
   }
 `;
 export const onDeleteComment = /* GraphQL */ `
-  subscription OnDeleteComment {
-    onDeleteComment {
+  subscription OnDeleteComment($owner: String) {
+    onDeleteComment(owner: $owner) {
       id
       post {
         id
         title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
+        owner
       }
       content
       createdAt
       updatedAt
       postCommentsId
+      owner
     }
   }
 `;

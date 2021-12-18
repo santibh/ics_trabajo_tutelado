@@ -1,75 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createBlog = /* GraphQL */ `
-  mutation CreateBlog(
-    $input: CreateBlogInput!
-    $condition: ModelBlogConditionInput
-  ) {
-    createBlog(input: $input, condition: $condition) {
-      id
-      name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateBlog = /* GraphQL */ `
-  mutation UpdateBlog(
-    $input: UpdateBlogInput!
-    $condition: ModelBlogConditionInput
-  ) {
-    updateBlog(input: $input, condition: $condition) {
-      id
-      name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteBlog = /* GraphQL */ `
-  mutation DeleteBlog(
-    $input: DeleteBlogInput!
-    $condition: ModelBlogConditionInput
-  ) {
-    deleteBlog(input: $input, condition: $condition) {
-      id
-      name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const createPost = /* GraphQL */ `
   mutation CreatePost(
     $input: CreatePostInput!
@@ -78,15 +9,6 @@ export const createPost = /* GraphQL */ `
     createPost(input: $input, condition: $condition) {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
@@ -94,12 +16,13 @@ export const createPost = /* GraphQL */ `
           createdAt
           updatedAt
           postCommentsId
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
+      owner
     }
   }
 `;
@@ -111,15 +34,6 @@ export const updatePost = /* GraphQL */ `
     updatePost(input: $input, condition: $condition) {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
@@ -127,12 +41,13 @@ export const updatePost = /* GraphQL */ `
           createdAt
           updatedAt
           postCommentsId
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
+      owner
     }
   }
 `;
@@ -144,15 +59,6 @@ export const deletePost = /* GraphQL */ `
     deletePost(input: $input, condition: $condition) {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
@@ -160,12 +66,13 @@ export const deletePost = /* GraphQL */ `
           createdAt
           updatedAt
           postCommentsId
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
+      owner
     }
   }
 `;
@@ -179,23 +86,18 @@ export const createComment = /* GraphQL */ `
       post {
         id
         title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
+        owner
       }
       content
       createdAt
       updatedAt
       postCommentsId
+      owner
     }
   }
 `;
@@ -209,23 +111,18 @@ export const updateComment = /* GraphQL */ `
       post {
         id
         title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
+        owner
       }
       content
       createdAt
       updatedAt
       postCommentsId
+      owner
     }
   }
 `;
@@ -239,23 +136,18 @@ export const deleteComment = /* GraphQL */ `
       post {
         id
         title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
+        owner
       }
       content
       createdAt
       updatedAt
       postCommentsId
+      owner
     }
   }
 `;

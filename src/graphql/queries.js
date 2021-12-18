@@ -1,60 +1,11 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getBlog = /* GraphQL */ `
-  query GetBlog($id: ID!) {
-    getBlog(id: $id) {
-      id
-      name
-      posts {
-        items {
-          id
-          title
-          createdAt
-          updatedAt
-          blogPostsId
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listBlogs = /* GraphQL */ `
-  query ListBlogs(
-    $filter: ModelBlogFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listBlogs(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
 export const getPost = /* GraphQL */ `
   query GetPost($id: ID!) {
     getPost(id: $id) {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
@@ -62,12 +13,13 @@ export const getPost = /* GraphQL */ `
           createdAt
           updatedAt
           postCommentsId
+          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      blogPostsId
+      owner
     }
   }
 `;
@@ -81,18 +33,12 @@ export const listPosts = /* GraphQL */ `
       items {
         id
         title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
+        owner
       }
       nextToken
     }
@@ -105,23 +51,18 @@ export const getComment = /* GraphQL */ `
       post {
         id
         title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
+        owner
       }
       content
       createdAt
       updatedAt
       postCommentsId
+      owner
     }
   }
 `;
@@ -139,12 +80,13 @@ export const listComments = /* GraphQL */ `
           title
           createdAt
           updatedAt
-          blogPostsId
+          owner
         }
         content
         createdAt
         updatedAt
         postCommentsId
+        owner
       }
       nextToken
     }

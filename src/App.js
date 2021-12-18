@@ -1,26 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import { API } from 'aws-amplify';
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-import { listNotes } from './graphql/queries';
-
-const initialFormState = { name: '', description: '' }
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import { API } from "aws-amplify";
+import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+import {
+  createPost as createPostMutation,
+  deletePost as deletePostMutation,
+} from "./graphql/mutations";
+import { listPosts } from "./graphql/queries";
+import Feed from "./components/Feed";
 
 function App() {
-  const [notes, setNotes] = useState([]);
-  const [formData, setFormData] = useState(initialFormState);
+  const [posts, setPosts] = useState([]);
+  const [newPost, setNewPost] = useState({ title: "prueba" });
 
   useEffect(() => {
-    fetchNotes();
+    fetchPosts();
   }, []);
 
-  async function fetchNotes() {
-    /*const apiData = await API.graphql({ query: listNotes });
-    setNotes(apiData.data.listNotes.items);*/
+  async function fetchPosts() {
+    const apiData = await API.graphql({ query: listPosts });
+    setPosts(apiData.data.listPosts.items);
   }
 
-  async function createNote() {
-    
+  async function createPost() {
+    if (newPost.title.length === "") return;
+    await API.graphql({
+      query: createPostMutation,
+      variables: { input: newPost },
+    });
   }
 
   async function deleteNote({ id }) {
@@ -31,30 +38,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>My Notes App</h1>
-      <input
-        onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Note name"
-        value={formData.name}
-      />
-      <input
-        onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="Note description"
-        value={formData.description}
-      />
-      <button onClick={createNote}>Create Note</button>
-      <div style={{marginBottom: 30}}>
-        {
-          notes.map(note => (
-            <div key={note.id || note.name}>
-              <h2>{note.name}</h2>
-              <p>{note.description}</p>
-              <button onClick={() => deleteNote(note)}>Delete note</button>
-            </div>
-          ))
-        }
-      </div>
       <AmplifySignOut />
+      <h1>ICS Trabajo Tutelado</h1>
+
+      <button onClick={createPost}>Crear</button>
+      <Feed posts={posts}/>
     </div>
   );
 }
