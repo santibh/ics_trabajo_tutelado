@@ -54,7 +54,7 @@ function App() {
           </button>
         </div>
       </div>
-      {!loading && <Feed posts={posts} setPosts={setPosts} />}
+      {!loading && <Feed posts={posts} setPosts={setPosts} reload={fetchPosts}/>}
       {loading && <div>Cargando...</div>}
     </div>
   );
