@@ -10,7 +10,7 @@ const Feed = ({posts, setPosts}) => {
   return (
     <div className="col">
       {posts.map((x) => (
-        <Post id={x.id} owner={x.owner} title={x.title} deletePost={deletePost} />
+        <Post id={x.id} owner={x.owner} date={x.createdAt} title={x.title} deletePost={deletePost} />
       ))}
     </div>
   );

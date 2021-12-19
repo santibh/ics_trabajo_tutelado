@@ -6,17 +6,6 @@ export const onCreatePost = /* GraphQL */ `
     onCreatePost(owner: $owner) {
       id
       title
-      comments {
-        items {
-          id
-          content
-          createdAt
-          updatedAt
-          postCommentsId
-          owner
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       owner
@@ -28,17 +17,6 @@ export const onUpdatePost = /* GraphQL */ `
     onUpdatePost(owner: $owner) {
       id
       title
-      comments {
-        items {
-          id
-          content
-          createdAt
-          updatedAt
-          postCommentsId
-          owner
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       owner
@@ -50,85 +28,8 @@ export const onDeletePost = /* GraphQL */ `
     onDeletePost(owner: $owner) {
       id
       title
-      comments {
-        items {
-          id
-          content
-          createdAt
-          updatedAt
-          postCommentsId
-          owner
-        }
-        nextToken
-      }
       createdAt
       updatedAt
-      owner
-    }
-  }
-`;
-export const onCreateComment = /* GraphQL */ `
-  subscription OnCreateComment($owner: String) {
-    onCreateComment(owner: $owner) {
-      id
-      post {
-        id
-        title
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-        owner
-      }
-      content
-      createdAt
-      updatedAt
-      postCommentsId
-      owner
-    }
-  }
-`;
-export const onUpdateComment = /* GraphQL */ `
-  subscription OnUpdateComment($owner: String) {
-    onUpdateComment(owner: $owner) {
-      id
-      post {
-        id
-        title
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-        owner
-      }
-      content
-      createdAt
-      updatedAt
-      postCommentsId
-      owner
-    }
-  }
-`;
-export const onDeleteComment = /* GraphQL */ `
-  subscription OnDeleteComment($owner: String) {
-    onDeleteComment(owner: $owner) {
-      id
-      post {
-        id
-        title
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-        owner
-      }
-      content
-      createdAt
-      updatedAt
-      postCommentsId
       owner
     }
   }

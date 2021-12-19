@@ -8,6 +8,7 @@ import Feed from "./components/Feed";
 import { BiRefresh } from "react-icons/bi";
 import NewPostBox from "./components/NewPostBox";
 import "bootstrap/dist/css/bootstrap.css";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -37,14 +38,18 @@ function App() {
   return (
     <div className="App">
       <AmplifySignOut />
-      <div className="container">
+      <div className="container mb-4">
         <h1>ICS Trabajo Tutelado</h1>
         <div className="d-flex justify-content-center">
           <button className="btn" onClick={fetchPosts}>
             <BiRefresh />
           </button>
           <NewPostBox value={newPost} setNewPost={setNewPost} />
-          <button className="btn btn-primary" onClick={createPost} disabled={newPost.title === ""}>
+          <button
+            className="btn btn-primary"
+            onClick={createPost}
+            disabled={newPost.title === ""}
+          >
             Post
           </button>
         </div>
