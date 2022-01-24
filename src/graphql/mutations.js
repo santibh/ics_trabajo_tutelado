@@ -8,6 +8,7 @@ export const createPost = /* GraphQL */ `
   ) {
     createPost(input: $input, condition: $condition) {
       id
+      title
       comments {
         items {
           id
@@ -15,14 +16,11 @@ export const createPost = /* GraphQL */ `
           content
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
-      title
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -33,6 +31,7 @@ export const updatePost = /* GraphQL */ `
   ) {
     updatePost(input: $input, condition: $condition) {
       id
+      title
       comments {
         items {
           id
@@ -40,14 +39,11 @@ export const updatePost = /* GraphQL */ `
           content
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
-      title
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -58,6 +54,7 @@ export const deletePost = /* GraphQL */ `
   ) {
     deletePost(input: $input, condition: $condition) {
       id
+      title
       comments {
         items {
           id
@@ -65,14 +62,11 @@ export const deletePost = /* GraphQL */ `
           content
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
-      title
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -84,10 +78,18 @@ export const createComment = /* GraphQL */ `
     createComment(input: $input, condition: $condition) {
       id
       postID
+      post {
+        id
+        title
+        comments {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       content
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -99,10 +101,18 @@ export const updateComment = /* GraphQL */ `
     updateComment(input: $input, condition: $condition) {
       id
       postID
+      post {
+        id
+        title
+        comments {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       content
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -114,10 +124,18 @@ export const deleteComment = /* GraphQL */ `
     deleteComment(input: $input, condition: $condition) {
       id
       postID
+      post {
+        id
+        title
+        comments {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       content
       createdAt
       updatedAt
-      owner
     }
   }
 `;

@@ -5,6 +5,7 @@ export const getPost = /* GraphQL */ `
   query GetPost($id: ID!) {
     getPost(id: $id) {
       id
+      title
       comments {
         items {
           id
@@ -12,14 +13,11 @@ export const getPost = /* GraphQL */ `
           content
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
-      title
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -32,17 +30,12 @@ export const listPosts = /* GraphQL */ `
     listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        comments {
-          items {
-            content
-            owner
-            createdAt
-          }
-        }
         title
+        comments {
+          nextToken
+        }
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -53,10 +46,18 @@ export const getComment = /* GraphQL */ `
     getComment(id: $id) {
       id
       postID
+      post {
+        id
+        title
+        comments {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       content
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -70,10 +71,15 @@ export const listComments = /* GraphQL */ `
       items {
         id
         postID
+        post {
+          id
+          title
+          createdAt
+          updatedAt
+        }
         content
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }

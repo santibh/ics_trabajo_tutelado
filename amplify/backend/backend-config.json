@@ -1,13 +1,15 @@
 {
   "auth": {
-    "icstrabajotuteladobfc4bfbc": {
+    "icstrabajotutelado6d6f9e7b": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
       "frontendAuthConfig": {
         "socialProviders": [],
-        "usernameAttributes": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
         "signupAttributes": [
           "EMAIL"
         ],
@@ -34,19 +36,10 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authicstrabajotuteladobfc4bfbc"
+              "userPoolId": "authicstrabajotutelado6d6f9e7b"
             }
           },
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "API_KEY",
-              "apiKeyConfig": {
-                "apiKeyExpirationDays": 365,
-                "apiKeyExpirationDate": "2022-12-18T10:25:05.592Z",
-                "description": "ics_trabajo_tutelado_api_key"
-              }
-            }
-          ]
+          "additionalAuthenticationProviders": []
         }
       }
     }

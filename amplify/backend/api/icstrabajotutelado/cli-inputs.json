@@ -6,16 +6,7 @@
     "gqlSchemaPath": "/Users/santiagobarreirohermida/repositories/ics_trabajo_tutelado/amplify/backend/api/icstrabajotutelado/schema.graphql",
     "defaultAuthType": {
       "mode": "AMAZON_COGNITO_USER_POOLS",
-      "cognitoUserPoolId": "authicstrabajotuteladobfc4bfbc"
-    },
-    "additionalAuthTypes": [
-      {
-        "mode": "API_KEY",
-        "expirationTime": 365,
-        "apiKeyExpirationDate": "2022-12-18T10:25:05.592Z",
-        "keyDescription": "ics_trabajo_tutelado_api_key"
-      }
-    ],
-    "conflictResolution": {}
+      "cognitoUserPoolId": "authicstrabajotutelado6d6f9e7b"
+    }
   }
 }
