@@ -25,6 +25,7 @@ function NewCommentBox({ postID, reload }) {
       <input
         type="text"
         value={newComment.content}
+        style={{ marginRight: "0.5em", width: "25em" }}
         onChange={(e) => setNewComment({ postID, content: e.target.value })}
       ></input>
       <button

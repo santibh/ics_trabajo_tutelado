@@ -22,7 +22,7 @@ exports.handler = async function (event) {
               Data: `Han respondido a tu post el día ${commentDate
                 .toISOString()
                 .replace(/T/, " ") // replace T with a space
-                .replace(/\..+/, "")}: \n <<${commentContent}>> `,
+                .replace(/\..+/, "")}: \n <<${commentContent}>> \n ${JSON.stringify(streamedItem)}`,
             },
           },
 

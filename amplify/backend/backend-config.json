@@ -1,15 +1,13 @@
 {
   "auth": {
-    "icstrabajotutelado6d6f9e7b": {
+    "icstrabajotuteladofe75a946": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
       "frontendAuthConfig": {
         "socialProviders": [],
-        "usernameAttributes": [
-          "EMAIL"
-        ],
+        "usernameAttributes": [],
         "signupAttributes": [
           "EMAIL"
         ],
@@ -36,7 +34,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authicstrabajotutelado6d6f9e7b"
+              "userPoolId": "authicstrabajotuteladofe75a946"
             }
           },
           "additionalAuthenticationProviders": []
@@ -45,7 +43,7 @@
     }
   },
   "function": {
-    "icstrabajotutelado60a44ec5": {
+    "icstrabajotuteladoaa2e4d20": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",

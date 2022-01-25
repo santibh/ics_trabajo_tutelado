@@ -33,7 +33,7 @@ export const listPosts = /* GraphQL */ `
         title
         comments {
           items {
-            content
+            content,
           }
         }
         createdAt

@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
     "auth": {
-        "icstrabajotutelado6d6f9e7b": {
+        "icstrabajotuteladofe75a946": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",
@@ -18,7 +18,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "function": {
-        "icstrabajotutelado60a44ec5": {
+        "icstrabajotuteladoaa2e4d20": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",

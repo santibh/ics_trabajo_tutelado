@@ -1,24 +1,24 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-icstrabajotutelado-dev-01411-authRole",
-      "UnauthRoleArn": "arn:aws:iam::896357214636:role/amplify-icstrabajotutelado-dev-01411-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::896357214636:role/amplify-icstrabajotutelado-dev-01411-authRole",
+      "AuthRoleName": "amplify-icstrabajotutelado-dev-01220-authRole",
+      "UnauthRoleArn": "arn:aws:iam::896357214636:role/amplify-icstrabajotutelado-dev-01220-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::896357214636:role/amplify-icstrabajotutelado-dev-01220-authRole",
       "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-icstrabajotutelado-dev-01411-deployment",
-      "UnauthRoleName": "amplify-icstrabajotutelado-dev-01411-unauthRole",
-      "StackName": "amplify-icstrabajotutelado-dev-01411",
-      "StackId": "arn:aws:cloudformation:eu-west-1:896357214636:stack/amplify-icstrabajotutelado-dev-01411/59b130c0-7d6b-11ec-b0ae-060b140e59c3",
-      "AmplifyAppId": "dfuyr1vahop38"
+      "DeploymentBucketName": "amplify-icstrabajotutelado-dev-01220-deployment",
+      "UnauthRoleName": "amplify-icstrabajotutelado-dev-01220-unauthRole",
+      "StackName": "amplify-icstrabajotutelado-dev-01220",
+      "StackId": "arn:aws:cloudformation:eu-west-1:896357214636:stack/amplify-icstrabajotutelado-dev-01220/41900740-7e34-11ec-8ab3-06513fb810b9",
+      "AmplifyAppId": "d2zdho377gt7w7"
     },
     "categories": {
       "auth": {
-        "icstrabajotutelado6d6f9e7b": {}
+        "icstrabajotuteladofe75a946": {}
       },
       "function": {
-        "icstrabajotutelado60a44ec5": {
-          "deploymentBucketName": "amplify-icstrabajotutelado-dev-01411-deployment",
-          "s3Key": "amplify-builds/icstrabajotutelado60a44ec5-65737232313879305032-build.zip"
+        "icstrabajotuteladoaa2e4d20": {
+          "deploymentBucketName": "amplify-icstrabajotutelado-dev-01220-deployment",
+          "s3Key": "amplify-builds/icstrabajotuteladoaa2e4d20-357973466a485170356a-build.zip"
         }
       }
     }
