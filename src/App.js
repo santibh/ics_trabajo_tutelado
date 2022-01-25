@@ -25,6 +25,7 @@ function App() {
     setLoading(false);
     setPosts(apiData.data.listPosts.items);
     setNewPost({ title: "" });
+    console.log(apiData.data.listPosts.items)
   }
 
   async function createPost() {

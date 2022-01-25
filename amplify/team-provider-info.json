@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "icstrabajotutelado6d6f9e7b": {}
+      },
+      "function": {
+        "icstrabajotutelado60a44ec5": {
+          "deploymentBucketName": "amplify-icstrabajotutelado-dev-01411-deployment",
+          "s3Key": "amplify-builds/icstrabajotutelado60a44ec5-69366673475a7a746e46-build.zip"
+        }
       }
     }
   }

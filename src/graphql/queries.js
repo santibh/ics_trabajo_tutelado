@@ -32,7 +32,9 @@ export const listPosts = /* GraphQL */ `
         id
         title
         comments {
-          nextToken
+          items {
+            content
+          }
         }
         createdAt
         updatedAt
