@@ -4,6 +4,7 @@ import { API } from "aws-amplify";
 import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 import { createPost as createPostMutation } from "./graphql/mutations";
 import { listPosts } from "./graphql/queries";
+import { searchPosts } from "./graphql/queries";
 import Feed from "./components/Feed";
 import { BiRefresh } from "react-icons/bi";
 import NewPostBox from "./components/NewPostBox";
@@ -13,6 +14,8 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
   const [loading, setLoading] = useState(false);
   const [posts, setPosts] = useState([]);
+  const [query, setQuery] = useState("");
+  const [searchResults, setSearchResults] = useState();
   const [newPost, setNewPost] = useState({ title: "" });
 
   useEffect(() => {
@@ -35,6 +38,21 @@ function App() {
     }).then(() => fetchPosts());
   }
 
+  async function handleSearchPosts() {
+    const apiData = await API.graphql({
+      query: searchPosts,
+      variables: { title: "opens*arch" },
+    });
+    console.log(apiData.data.searchPosts.items);
+    try {
+      setSearchResults(apiData.data.searchPosts.items);
+    } catch {}
+  }
+
+  useEffect(() => {
+    console.log(searchResults);
+  }, [searchResults])
+
   return (
     <div className="App">
       <AmplifySignOut />
@@ -53,8 +71,33 @@ function App() {
             Post
           </button>
         </div>
+        <div className="d-flex justify-content-center">
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          ></input>{" "}
+          <button
+            className="btn btn-primary"
+            onClick={handleSearchPosts}
+            disabled={query === ""}
+          >
+            Buscar
+          </button>
+        </div>
+        <div>
+          <h4>Resultados de la búsqueda ({searchResults !== undefined &&
+            searchResults !== null && searchResults.length} mensaje/s):</h4>
+          {searchResults !== undefined &&
+            searchResults !== null &&
+            searchResults.map((x) => (
+              <p>{x.title}</p>
+            ))}
+        </div>
       </div>
-      {!loading && <Feed posts={posts} setPosts={setPosts} reload={fetchPosts}/>}
+      {!loading && (
+        <Feed posts={posts} setPosts={setPosts} reload={fetchPosts} />
+      )}
       {loading && <div>Cargando...</div>}
     </div>
   );

@@ -1,5 +1,5 @@
 
-type Post @model 
+type Post @model @searchable
           @auth(rules: [{ allow: private, operations: [read] }, { allow: owner }]) {
   id: ID!
   title: String!
