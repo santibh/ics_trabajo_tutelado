@@ -39,9 +39,10 @@ function App() {
   }
 
   async function handleSearchPosts() {
+    setSearchResults();
     const apiData = await API.graphql({
       query: searchPosts,
-      variables: { title: "opens*arch" },
+      variables: { filter: {title: { match: query }}},
     });
     console.log(apiData.data.searchPosts.items);
     try {
